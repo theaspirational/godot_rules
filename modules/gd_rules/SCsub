@@ -1,0 +1,10 @@
+#!/usr/bin/env python
+
+Import('env')
+env_gd_rules = env.Clone()
+
+# Build CLIPS 6.4 core (C sources)
+env_gd_rules.add_source_files(env.modules_sources, "clips_core_6_4/*.c")
+
+# Build our C++ glue
+env_gd_rules.add_source_files(env.modules_sources, "*.cpp")
